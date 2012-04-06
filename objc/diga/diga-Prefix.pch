@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'diga' target in the 'diga' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+
+#define MTLog(format, ...) NSLog(format, ##__VA_ARGS__)
+
+#ifdef DEBUG
+#define MTLogDebug(format, ...) MTLog(format, ##__VA_ARGS__)
+#else
+#define MTLogDebug(format, ...) 
+#endif
+#endif

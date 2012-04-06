@@ -1,0 +1,789 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6C4364E5152EC89400180A6C /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4364E4152EC89400180A6C /* PostViewController.m */; };
+		6CA9B0EA152DDC8800818299 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B0E9152DDC8800818299 /* Foundation.framework */; };
+		6CA9B109152E10D700818299 /* DGRequestTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA9B108152E10D700818299 /* DGRequestTypes.h */; };
+		6CF50393152E239A002E350A /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF50391152E239A002E350A /* JSONKit.h */; };
+		6CF50394152E239A002E350A /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF50392152E239A002E350A /* JSONKit.m */; };
+		6CF50398152E2469002E350A /* DGBackend.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF50395152E2469002E350A /* DGBackend.h */; };
+		6CF50399152E2469002E350A /* DGBackend.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF50396152E2469002E350A /* DGBackend.m */; };
+		6CF503A4152E25B5002E350A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF503A3152E25B5002E350A /* UIKit.framework */; };
+		6CF503A5152E25B5002E350A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B0E9152DDC8800818299 /* Foundation.framework */; };
+		6CF503A7152E25B5002E350A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF503A6152E25B5002E350A /* CoreGraphics.framework */; };
+		6CF503AD152E25B5002E350A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CF503AB152E25B5002E350A /* InfoPlist.strings */; };
+		6CF503AF152E25B5002E350A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503AE152E25B5002E350A /* main.m */; };
+		6CF503B3152E25B5002E350A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503B2152E25B5002E350A /* AppDelegate.m */; };
+		6CF503B8152E25E2002E350A /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF503B7152E25E2002E350A /* GHUnitIOS.framework */; };
+		6CF503BE152E2E48002E350A /* DGJKParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503BB152E2E48002E350A /* DGJKParser.h */; };
+		6CF503BF152E2E48002E350A /* DGJKParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503BC152E2E48002E350A /* DGJKParser.m */; };
+		6CF503C0152E2E48002E350A /* DGParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503BD152E2E48002E350A /* DGParserDelegate.h */; };
+		6CF503D4152E2EB1002E350A /* DGParserFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503C2152E2EB1002E350A /* DGParserFilter.h */; };
+		6CF503D5152E2EB1002E350A /* DGParserFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503C3152E2EB1002E350A /* DGParserFilter.m */; };
+		6CF503D6152E2EB1002E350A /* DGResponseFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503C4152E2EB1002E350A /* DGResponseFilter.h */; };
+		6CF503D7152E2EB1002E350A /* DGResponseFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503C5152E2EB1002E350A /* DGResponseFilter.m */; };
+		6CF503D8152E2EB1002E350A /* DGResultArrayFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503C6152E2EB1002E350A /* DGResultArrayFilter.h */; };
+		6CF503D9152E2EB1002E350A /* DGResultArrayFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503C7152E2EB1002E350A /* DGResultArrayFilter.m */; };
+		6CF503DA152E2EB1002E350A /* DGResultChannelsFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503C8152E2EB1002E350A /* DGResultChannelsFilter.h */; };
+		6CF503DB152E2EB1002E350A /* DGResultChannelsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503C9152E2EB1002E350A /* DGResultChannelsFilter.m */; };
+		6CF503DC152E2EB1002E350A /* DGResultFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503CA152E2EB1002E350A /* DGResultFilter.h */; };
+		6CF503DD152E2EB1002E350A /* DGResultFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503CB152E2EB1002E350A /* DGResultFilter.m */; };
+		6CF503DE152E2EB1002E350A /* DGResultPostFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503CC152E2EB1002E350A /* DGResultPostFilter.h */; };
+		6CF503DF152E2EB1002E350A /* DGResultPostFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503CD152E2EB1002E350A /* DGResultPostFilter.m */; };
+		6CF503E0152E2EB1002E350A /* DGStreamPostsFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503CE152E2EB1002E350A /* DGStreamPostsFilter.h */; };
+		6CF503E1152E2EB1002E350A /* DGStreamPostsFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503CF152E2EB1002E350A /* DGStreamPostsFilter.m */; };
+		6CF503E2152E2EB1002E350A /* DGUserChannelFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503D0152E2EB1002E350A /* DGUserChannelFilter.h */; };
+		6CF503E3152E2EB1002E350A /* DGUserChannelFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503D1152E2EB1002E350A /* DGUserChannelFilter.m */; };
+		6CF503E4152E2EB1002E350A /* DGUserMembersFilter.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503D2152E2EB1002E350A /* DGUserMembersFilter.h */; };
+		6CF503E5152E2EB1002E350A /* DGUserMembersFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503D3152E2EB1002E350A /* DGUserMembersFilter.m */; };
+		6CF503EA152E30DE002E350A /* NSDictionary+MindTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503E6152E30DE002E350A /* NSDictionary+MindTalk.h */; };
+		6CF503EB152E30DE002E350A /* NSDictionary+MindTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503E7152E30DE002E350A /* NSDictionary+MindTalk.m */; };
+		6CF503EC152E30DE002E350A /* NSString+MindTalk.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503E8152E30DE002E350A /* NSString+MindTalk.h */; };
+		6CF503ED152E30DE002E350A /* NSString+MindTalk.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503E9152E30DE002E350A /* NSString+MindTalk.m */; };
+		6CF503EF152E3787002E350A /* DGBackendDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503EE152E3787002E350A /* DGBackendDelegate.h */; };
+		6CF503F2152E38A5002E350A /* DGHTTPConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF503F0152E38A4002E350A /* DGHTTPConnection.h */; };
+		6CF503F3152E38A5002E350A /* DGHTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF503F1152E38A4002E350A /* DGHTTPConnection.m */; };
+		6CF503FA152E4496002E350A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF503A3152E25B5002E350A /* UIKit.framework */; };
+		6CF503FB152E4496002E350A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B0E9152DDC8800818299 /* Foundation.framework */; };
+		6CF503FC152E4496002E350A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF503A6152E25B5002E350A /* CoreGraphics.framework */; };
+		6CF50402152E4496002E350A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6CF50400152E4496002E350A /* InfoPlist.strings */; };
+		6CF50404152E4496002E350A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF50403152E4496002E350A /* main.m */; };
+		6CF50408152E4496002E350A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF50407152E4496002E350A /* AppDelegate.m */; };
+		6CF50410152E44BD002E350A /* libdiga.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B0E6152DDC8800818299 /* libdiga.a */; };
+		6CF50411152E44BD002E350A /* libOAuth2Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B104152E0F6100818299 /* libOAuth2Client.a */; };
+		6CF50413152E4590002E350A /* iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CF50412152E4590002E350A /* iPhone.storyboard */; };
+		6CF50416152E4913002E350A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF50415152E4913002E350A /* LoginViewController.m */; };
+		6CF50418152E54D2002E350A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF50417152E54D2002E350A /* Security.framework */; };
+		6CF5041B152E5A6E002E350A /* ChannelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF5041A152E5A6D002E350A /* ChannelListViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CA9B101152E0F6100818299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 942FFCD612315E0A00E6C65E;
+			remoteInfo = OAuth2Client.framework;
+		};
+		6CA9B103152E0F6100818299 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D2AAC07E0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+		6CF5040C152E44B3002E350A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA9B0DD152DDC8700818299 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CA9B0E5152DDC8800818299;
+			remoteInfo = diga;
+		};
+		6CF5040E152E44B3002E350A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = D2AAC07D0554694100DB518D;
+			remoteInfo = OAuth2Client;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6C4364E3152EC89400180A6C /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		6C4364E4152EC89400180A6C /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		6CA9B0E6152DDC8800818299 /* libdiga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdiga.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CA9B0E9152DDC8800818299 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		6CA9B0ED152DDC8800818299 /* diga-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "diga-Prefix.pch"; sourceTree = "<group>"; };
+		6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = OAuth2Client.xcodeproj; path = ../lib/OAuth2Client/OAuth2Client.xcodeproj; sourceTree = "<group>"; };
+		6CA9B108152E10D700818299 /* DGRequestTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGRequestTypes.h; sourceTree = "<group>"; };
+		6CF50391152E239A002E350A /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JSONKit.h; path = ../../lib/JSONKit/JSONKit.h; sourceTree = "<group>"; };
+		6CF50392152E239A002E350A /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JSONKit.m; path = ../../lib/JSONKit/JSONKit.m; sourceTree = "<group>"; };
+		6CF50395152E2469002E350A /* DGBackend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGBackend.h; sourceTree = "<group>"; };
+		6CF50396152E2469002E350A /* DGBackend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGBackend.m; sourceTree = "<group>"; };
+		6CF503A1152E25B5002E350A /* digatest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digatest.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CF503A3152E25B5002E350A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6CF503A6152E25B5002E350A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		6CF503AA152E25B5002E350A /* digatest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "digatest-Info.plist"; sourceTree = "<group>"; };
+		6CF503AC152E25B5002E350A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6CF503AE152E25B5002E350A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6CF503B0152E25B5002E350A /* digatest-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "digatest-Prefix.pch"; sourceTree = "<group>"; };
+		6CF503B1152E25B5002E350A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6CF503B2152E25B5002E350A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6CF503B7152E25E2002E350A /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = "../lib/gh-unit/Project-iOS/build/Framework/GHUnitIOS.framework"; sourceTree = "<group>"; };
+		6CF503BB152E2E48002E350A /* DGJKParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGJKParser.h; sourceTree = "<group>"; };
+		6CF503BC152E2E48002E350A /* DGJKParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGJKParser.m; sourceTree = "<group>"; };
+		6CF503BD152E2E48002E350A /* DGParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGParserDelegate.h; sourceTree = "<group>"; };
+		6CF503C2152E2EB1002E350A /* DGParserFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGParserFilter.h; sourceTree = "<group>"; };
+		6CF503C3152E2EB1002E350A /* DGParserFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGParserFilter.m; sourceTree = "<group>"; };
+		6CF503C4152E2EB1002E350A /* DGResponseFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGResponseFilter.h; sourceTree = "<group>"; };
+		6CF503C5152E2EB1002E350A /* DGResponseFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGResponseFilter.m; sourceTree = "<group>"; };
+		6CF503C6152E2EB1002E350A /* DGResultArrayFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGResultArrayFilter.h; sourceTree = "<group>"; };
+		6CF503C7152E2EB1002E350A /* DGResultArrayFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGResultArrayFilter.m; sourceTree = "<group>"; };
+		6CF503C8152E2EB1002E350A /* DGResultChannelsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGResultChannelsFilter.h; sourceTree = "<group>"; };
+		6CF503C9152E2EB1002E350A /* DGResultChannelsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGResultChannelsFilter.m; sourceTree = "<group>"; };
+		6CF503CA152E2EB1002E350A /* DGResultFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGResultFilter.h; sourceTree = "<group>"; };
+		6CF503CB152E2EB1002E350A /* DGResultFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGResultFilter.m; sourceTree = "<group>"; };
+		6CF503CC152E2EB1002E350A /* DGResultPostFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGResultPostFilter.h; sourceTree = "<group>"; };
+		6CF503CD152E2EB1002E350A /* DGResultPostFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGResultPostFilter.m; sourceTree = "<group>"; };
+		6CF503CE152E2EB1002E350A /* DGStreamPostsFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGStreamPostsFilter.h; sourceTree = "<group>"; };
+		6CF503CF152E2EB1002E350A /* DGStreamPostsFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGStreamPostsFilter.m; sourceTree = "<group>"; };
+		6CF503D0152E2EB1002E350A /* DGUserChannelFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGUserChannelFilter.h; sourceTree = "<group>"; };
+		6CF503D1152E2EB1002E350A /* DGUserChannelFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGUserChannelFilter.m; sourceTree = "<group>"; };
+		6CF503D2152E2EB1002E350A /* DGUserMembersFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGUserMembersFilter.h; sourceTree = "<group>"; };
+		6CF503D3152E2EB1002E350A /* DGUserMembersFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGUserMembersFilter.m; sourceTree = "<group>"; };
+		6CF503E6152E30DE002E350A /* NSDictionary+MindTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+MindTalk.h"; sourceTree = "<group>"; };
+		6CF503E7152E30DE002E350A /* NSDictionary+MindTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+MindTalk.m"; sourceTree = "<group>"; };
+		6CF503E8152E30DE002E350A /* NSString+MindTalk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MindTalk.h"; sourceTree = "<group>"; };
+		6CF503E9152E30DE002E350A /* NSString+MindTalk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MindTalk.m"; sourceTree = "<group>"; };
+		6CF503EE152E3787002E350A /* DGBackendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGBackendDelegate.h; sourceTree = "<group>"; };
+		6CF503F0152E38A4002E350A /* DGHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGHTTPConnection.h; sourceTree = "<group>"; };
+		6CF503F1152E38A4002E350A /* DGHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGHTTPConnection.m; sourceTree = "<group>"; };
+		6CF503F8152E4496002E350A /* digademo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = digademo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CF503FF152E4496002E350A /* digademo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "digademo-Info.plist"; sourceTree = "<group>"; };
+		6CF50401152E4496002E350A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6CF50403152E4496002E350A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6CF50405152E4496002E350A /* digademo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "digademo-Prefix.pch"; sourceTree = "<group>"; };
+		6CF50406152E4496002E350A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6CF50407152E4496002E350A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6CF50412152E4590002E350A /* iPhone.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhone.storyboard; sourceTree = "<group>"; };
+		6CF50414152E4913002E350A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		6CF50415152E4913002E350A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		6CF50417152E54D2002E350A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		6CF50419152E5A6D002E350A /* ChannelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChannelListViewController.h; sourceTree = "<group>"; };
+		6CF5041A152E5A6D002E350A /* ChannelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChannelListViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CA9B0E3152DDC8800818299 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA9B0EA152DDC8800818299 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CF5039E152E25B5002E350A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF503A4152E25B5002E350A /* UIKit.framework in Frameworks */,
+				6CF503A5152E25B5002E350A /* Foundation.framework in Frameworks */,
+				6CF503A7152E25B5002E350A /* CoreGraphics.framework in Frameworks */,
+				6CF503B8152E25E2002E350A /* GHUnitIOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CF503F5152E4496002E350A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF50418152E54D2002E350A /* Security.framework in Frameworks */,
+				6CF50410152E44BD002E350A /* libdiga.a in Frameworks */,
+				6CF50411152E44BD002E350A /* libOAuth2Client.a in Frameworks */,
+				6CF503FA152E4496002E350A /* UIKit.framework in Frameworks */,
+				6CF503FB152E4496002E350A /* Foundation.framework in Frameworks */,
+				6CF503FC152E4496002E350A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CA9B0DB152DDC8700818299 = {
+			isa = PBXGroup;
+			children = (
+				6CF50417152E54D2002E350A /* Security.framework */,
+				6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */,
+				6CA9B0EB152DDC8800818299 /* diga */,
+				6CF503A8152E25B5002E350A /* digatest */,
+				6CF503FD152E4496002E350A /* digademo */,
+				6CA9B0E8152DDC8800818299 /* Frameworks */,
+				6CA9B0E7152DDC8800818299 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CA9B0E7152DDC8800818299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CA9B0E6152DDC8800818299 /* libdiga.a */,
+				6CF503A1152E25B5002E350A /* digatest.app */,
+				6CF503F8152E4496002E350A /* digademo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CA9B0E8152DDC8800818299 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503B7152E25E2002E350A /* GHUnitIOS.framework */,
+				6CA9B0E9152DDC8800818299 /* Foundation.framework */,
+				6CF503A3152E25B5002E350A /* UIKit.framework */,
+				6CF503A6152E25B5002E350A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CA9B0EB152DDC8800818299 /* diga */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503E6152E30DE002E350A /* NSDictionary+MindTalk.h */,
+				6CF503E7152E30DE002E350A /* NSDictionary+MindTalk.m */,
+				6CF503E8152E30DE002E350A /* NSString+MindTalk.h */,
+				6CF503E9152E30DE002E350A /* NSString+MindTalk.m */,
+				6CF503C1152E2EB1002E350A /* ParserFilter */,
+				6CF503BA152E2E48002E350A /* Parser */,
+				6CF50395152E2469002E350A /* DGBackend.h */,
+				6CF50396152E2469002E350A /* DGBackend.m */,
+				6CF503F0152E38A4002E350A /* DGHTTPConnection.h */,
+				6CF503F1152E38A4002E350A /* DGHTTPConnection.m */,
+				6CF503EE152E3787002E350A /* DGBackendDelegate.h */,
+				6CA9B108152E10D700818299 /* DGRequestTypes.h */,
+				6CF5038F152E231B002E350A /* JSONKit */,
+				6CA9B0EC152DDC8800818299 /* Supporting Files */,
+			);
+			path = diga;
+			sourceTree = "<group>";
+		};
+		6CA9B0EC152DDC8800818299 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6CA9B0ED152DDC8800818299 /* diga-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6CA9B0FA152E0F6100818299 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CA9B102152E0F6100818299 /* OAuth2Client.framework */,
+				6CA9B104152E0F6100818299 /* libOAuth2Client.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CF5038F152E231B002E350A /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				6CF50391152E239A002E350A /* JSONKit.h */,
+				6CF50392152E239A002E350A /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		6CF503A8152E25B5002E350A /* digatest */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503B1152E25B5002E350A /* AppDelegate.h */,
+				6CF503B2152E25B5002E350A /* AppDelegate.m */,
+				6CF503A9152E25B5002E350A /* Supporting Files */,
+			);
+			path = digatest;
+			sourceTree = "<group>";
+		};
+		6CF503A9152E25B5002E350A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503AA152E25B5002E350A /* digatest-Info.plist */,
+				6CF503AB152E25B5002E350A /* InfoPlist.strings */,
+				6CF503AE152E25B5002E350A /* main.m */,
+				6CF503B0152E25B5002E350A /* digatest-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6CF503BA152E2E48002E350A /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503BB152E2E48002E350A /* DGJKParser.h */,
+				6CF503BC152E2E48002E350A /* DGJKParser.m */,
+				6CF503BD152E2E48002E350A /* DGParserDelegate.h */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		6CF503C1152E2EB1002E350A /* ParserFilter */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503C2152E2EB1002E350A /* DGParserFilter.h */,
+				6CF503C3152E2EB1002E350A /* DGParserFilter.m */,
+				6CF503C4152E2EB1002E350A /* DGResponseFilter.h */,
+				6CF503C5152E2EB1002E350A /* DGResponseFilter.m */,
+				6CF503C6152E2EB1002E350A /* DGResultArrayFilter.h */,
+				6CF503C7152E2EB1002E350A /* DGResultArrayFilter.m */,
+				6CF503C8152E2EB1002E350A /* DGResultChannelsFilter.h */,
+				6CF503C9152E2EB1002E350A /* DGResultChannelsFilter.m */,
+				6CF503CA152E2EB1002E350A /* DGResultFilter.h */,
+				6CF503CB152E2EB1002E350A /* DGResultFilter.m */,
+				6CF503CC152E2EB1002E350A /* DGResultPostFilter.h */,
+				6CF503CD152E2EB1002E350A /* DGResultPostFilter.m */,
+				6CF503CE152E2EB1002E350A /* DGStreamPostsFilter.h */,
+				6CF503CF152E2EB1002E350A /* DGStreamPostsFilter.m */,
+				6CF503D0152E2EB1002E350A /* DGUserChannelFilter.h */,
+				6CF503D1152E2EB1002E350A /* DGUserChannelFilter.m */,
+				6CF503D2152E2EB1002E350A /* DGUserMembersFilter.h */,
+				6CF503D3152E2EB1002E350A /* DGUserMembersFilter.m */,
+			);
+			path = ParserFilter;
+			sourceTree = "<group>";
+		};
+		6CF503FD152E4496002E350A /* digademo */ = {
+			isa = PBXGroup;
+			children = (
+				6CF50406152E4496002E350A /* AppDelegate.h */,
+				6CF50407152E4496002E350A /* AppDelegate.m */,
+				6CF503FE152E4496002E350A /* Supporting Files */,
+				6CF50412152E4590002E350A /* iPhone.storyboard */,
+				6CF50414152E4913002E350A /* LoginViewController.h */,
+				6CF50415152E4913002E350A /* LoginViewController.m */,
+				6CF50419152E5A6D002E350A /* ChannelListViewController.h */,
+				6CF5041A152E5A6D002E350A /* ChannelListViewController.m */,
+				6C4364E3152EC89400180A6C /* PostViewController.h */,
+				6C4364E4152EC89400180A6C /* PostViewController.m */,
+			);
+			path = digademo;
+			sourceTree = "<group>";
+		};
+		6CF503FE152E4496002E350A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				6CF503FF152E4496002E350A /* digademo-Info.plist */,
+				6CF50400152E4496002E350A /* InfoPlist.strings */,
+				6CF50403152E4496002E350A /* main.m */,
+				6CF50405152E4496002E350A /* digademo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		6CA9B0E4152DDC8800818299 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CA9B109152E10D700818299 /* DGRequestTypes.h in Headers */,
+				6CF50393152E239A002E350A /* JSONKit.h in Headers */,
+				6CF50398152E2469002E350A /* DGBackend.h in Headers */,
+				6CF503BE152E2E48002E350A /* DGJKParser.h in Headers */,
+				6CF503C0152E2E48002E350A /* DGParserDelegate.h in Headers */,
+				6CF503D4152E2EB1002E350A /* DGParserFilter.h in Headers */,
+				6CF503D6152E2EB1002E350A /* DGResponseFilter.h in Headers */,
+				6CF503D8152E2EB1002E350A /* DGResultArrayFilter.h in Headers */,
+				6CF503DA152E2EB1002E350A /* DGResultChannelsFilter.h in Headers */,
+				6CF503DC152E2EB1002E350A /* DGResultFilter.h in Headers */,
+				6CF503DE152E2EB1002E350A /* DGResultPostFilter.h in Headers */,
+				6CF503E0152E2EB1002E350A /* DGStreamPostsFilter.h in Headers */,
+				6CF503E2152E2EB1002E350A /* DGUserChannelFilter.h in Headers */,
+				6CF503E4152E2EB1002E350A /* DGUserMembersFilter.h in Headers */,
+				6CF503EA152E30DE002E350A /* NSDictionary+MindTalk.h in Headers */,
+				6CF503EC152E30DE002E350A /* NSString+MindTalk.h in Headers */,
+				6CF503EF152E3787002E350A /* DGBackendDelegate.h in Headers */,
+				6CF503F2152E38A5002E350A /* DGHTTPConnection.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6CA9B0E5152DDC8800818299 /* diga */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CA9B0F3152DDC8800818299 /* Build configuration list for PBXNativeTarget "diga" */;
+			buildPhases = (
+				6CA9B0E2152DDC8800818299 /* Sources */,
+				6CA9B0E3152DDC8800818299 /* Frameworks */,
+				6CA9B0E4152DDC8800818299 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = diga;
+			productName = diga;
+			productReference = 6CA9B0E6152DDC8800818299 /* libdiga.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6CF503A0152E25B5002E350A /* digatest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF503B4152E25B5002E350A /* Build configuration list for PBXNativeTarget "digatest" */;
+			buildPhases = (
+				6CF5039D152E25B5002E350A /* Sources */,
+				6CF5039E152E25B5002E350A /* Frameworks */,
+				6CF5039F152E25B5002E350A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = digatest;
+			productName = digatest;
+			productReference = 6CF503A1152E25B5002E350A /* digatest.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6CF503F7152E4496002E350A /* digademo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CF50409152E4496002E350A /* Build configuration list for PBXNativeTarget "digademo" */;
+			buildPhases = (
+				6CF503F4152E4496002E350A /* Sources */,
+				6CF503F5152E4496002E350A /* Frameworks */,
+				6CF503F6152E4496002E350A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CF5040D152E44B3002E350A /* PBXTargetDependency */,
+				6CF5040F152E44B3002E350A /* PBXTargetDependency */,
+			);
+			name = digademo;
+			productName = digademo;
+			productReference = 6CF503F8152E4496002E350A /* digademo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CA9B0DD152DDC8700818299 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0430;
+				ORGANIZATIONNAME = "lynxluna@gmail.com";
+			};
+			buildConfigurationList = 6CA9B0E0152DDC8700818299 /* Build configuration list for PBXProject "diga" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 6CA9B0DB152DDC8700818299;
+			productRefGroup = 6CA9B0E7152DDC8800818299 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 6CA9B0FA152E0F6100818299 /* Products */;
+					ProjectRef = 6CA9B0F9152E0F6100818299 /* OAuth2Client.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				6CA9B0E5152DDC8800818299 /* diga */,
+				6CF503A0152E25B5002E350A /* digatest */,
+				6CF503F7152E4496002E350A /* digademo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		6CA9B102152E0F6100818299 /* OAuth2Client.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = OAuth2Client.framework;
+			remoteRef = 6CA9B101152E0F6100818299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		6CA9B104152E0F6100818299 /* libOAuth2Client.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libOAuth2Client.a;
+			remoteRef = 6CA9B103152E0F6100818299 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CF5039F152E25B5002E350A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF503AD152E25B5002E350A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CF503F6152E4496002E350A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF50402152E4496002E350A /* InfoPlist.strings in Resources */,
+				6CF50413152E4590002E350A /* iPhone.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CA9B0E2152DDC8800818299 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF50394152E239A002E350A /* JSONKit.m in Sources */,
+				6CF50399152E2469002E350A /* DGBackend.m in Sources */,
+				6CF503BF152E2E48002E350A /* DGJKParser.m in Sources */,
+				6CF503D5152E2EB1002E350A /* DGParserFilter.m in Sources */,
+				6CF503D7152E2EB1002E350A /* DGResponseFilter.m in Sources */,
+				6CF503D9152E2EB1002E350A /* DGResultArrayFilter.m in Sources */,
+				6CF503DB152E2EB1002E350A /* DGResultChannelsFilter.m in Sources */,
+				6CF503DD152E2EB1002E350A /* DGResultFilter.m in Sources */,
+				6CF503DF152E2EB1002E350A /* DGResultPostFilter.m in Sources */,
+				6CF503E1152E2EB1002E350A /* DGStreamPostsFilter.m in Sources */,
+				6CF503E3152E2EB1002E350A /* DGUserChannelFilter.m in Sources */,
+				6CF503E5152E2EB1002E350A /* DGUserMembersFilter.m in Sources */,
+				6CF503EB152E30DE002E350A /* NSDictionary+MindTalk.m in Sources */,
+				6CF503ED152E30DE002E350A /* NSString+MindTalk.m in Sources */,
+				6CF503F3152E38A5002E350A /* DGHTTPConnection.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CF5039D152E25B5002E350A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF503AF152E25B5002E350A /* main.m in Sources */,
+				6CF503B3152E25B5002E350A /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CF503F4152E4496002E350A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CF50404152E4496002E350A /* main.m in Sources */,
+				6CF50408152E4496002E350A /* AppDelegate.m in Sources */,
+				6CF50416152E4913002E350A /* LoginViewController.m in Sources */,
+				6CF5041B152E5A6E002E350A /* ChannelListViewController.m in Sources */,
+				6C4364E5152EC89400180A6C /* PostViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CF5040D152E44B3002E350A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CA9B0E5152DDC8800818299 /* diga */;
+			targetProxy = 6CF5040C152E44B3002E350A /* PBXContainerItemProxy */;
+		};
+		6CF5040F152E44B3002E350A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = OAuth2Client;
+			targetProxy = 6CF5040E152E44B3002E350A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6CF503AB152E25B5002E350A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CF503AC152E25B5002E350A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6CF50400152E4496002E350A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CF50401152E4496002E350A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CA9B0F1152DDC8800818299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6CA9B0F2152DDC8800818299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CA9B0F4152DDC8800818299 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/diga.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib/gh-unit/Project-iOS/build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "diga/diga-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6CA9B0F5152DDC8800818299 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/diga.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib/gh-unit/Project-iOS/build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "diga/diga-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		6CF503B5152E25B5002E350A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib/gh-unit/Project-iOS/build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "digatest/digatest-Prefix.pch";
+				INFOPLIST_FILE = "digatest/digatest-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6CF503B6152E25B5002E350A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../lib/gh-unit/Project-iOS/build/Framework\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "digatest/digatest-Prefix.pch";
+				INFOPLIST_FILE = "digatest/digatest-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		6CF5040A152E4496002E350A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "digademo/digademo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/OAuth2Client/**";
+				INFOPLIST_FILE = "digademo/digademo-Info.plist";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/OAuth2Client/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		6CF5040B152E4496002E350A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "digademo/digademo-Prefix.pch";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/OAuth2Client/**";
+				INFOPLIST_FILE = "digademo/digademo-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-all_load",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/../lib/OAuth2Client/**";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CA9B0E0152DDC8700818299 /* Build configuration list for PBXProject "diga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA9B0F1152DDC8800818299 /* Debug */,
+				6CA9B0F2152DDC8800818299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CA9B0F3152DDC8800818299 /* Build configuration list for PBXNativeTarget "diga" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CA9B0F4152DDC8800818299 /* Debug */,
+				6CA9B0F5152DDC8800818299 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CF503B4152E25B5002E350A /* Build configuration list for PBXNativeTarget "digatest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF503B5152E25B5002E350A /* Debug */,
+				6CF503B6152E25B5002E350A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CF50409152E4496002E350A /* Build configuration list for PBXNativeTarget "digademo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CF5040A152E4496002E350A /* Debug */,
+				6CF5040B152E4496002E350A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CA9B0DD152DDC8700818299 /* Project object */;
+}

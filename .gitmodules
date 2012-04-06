@@ -1,0 +1,9 @@
+[submodule "lib/gh-unit"]
+	path = lib/gh-unit
+	url = git://github.com/gabriel/gh-unit.git
+[submodule "lib/OAuth2Client"]
+	path = lib/OAuth2Client
+	url = git://github.com/nxtbgthng/OAuth2Client.git
+[submodule "lib/JSONKit"]
+	path = lib/JSONKit
+	url = git://github.com/johnezang/JSONKit.git

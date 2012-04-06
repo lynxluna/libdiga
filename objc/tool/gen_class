@@ -1,0 +1,134 @@
+#!/usr/bin/env python
+
+HEADER_TEMPLATE= \
+'''// @CLASSNAME@.h
+// libDiga
+//
+// Created by Muhammad Sumyandityo Noor on @DATE@
+// Copyright @YEAR@. All Rights Reserved
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in Software without restriction, including without limitation the 
+// rights to use, copy, modify, merge, publish, distribute, sublicense, 
+// and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+//
+// OAuth2Client library
+// Portion of this software copyright (c) 2010 nxtbghng
+// 
+
+#ifndef DIGA_@UPCASE_CLASSNAME@_H
+#define DIGA_@UPCASE_CLASSNAME@_H
+
+@interface @CLASSNAME@ @NSOBJECT_MEMBER_CLASSES@
+
+@end
+
+#endif
+
+'''
+
+NSOBJECT_MEMBER_CLASSES = \
+''': NSObject {
+
+}
+'''
+
+IMPL_TEMPLATE= \
+'''// @CLASSNAME@.m
+// libDiga
+//
+// Created by Muhammad Sumyandityo Noor on @DATE@
+// Copyright @YEAR@. All Rights Reserved
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the "Software"),
+// to deal in Software without restriction, including without limitation the 
+// rights to use, copy, modify, merge, publish, distribute, sublicense, 
+// and/or sell copies of the Software, and to permit persons to whom the
+// Software is furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+// OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+// NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+// HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+// WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+// FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+// OTHER DEALINGS IN THE SOFTWARE.
+//
+// OAuth2Client
+// Portion of this software is Copyright (c) 2010 nxtbgthng
+
+#import @CLASSNAME@.h
+
+@implementation @CLASSNAME@
+
+@end
+'''
+
+import os
+import datetime
+
+utc = datetime.datetime.utcnow();
+utcstr = utc.strftime("%a, %b %d, %Y %I:%M:%S %p UTC")
+ystr = utc.strftime("%Y")
+base_filename=""
+catname = ""
+base_classname=""
+
+while base_classname == "":
+    base_classname = raw_input("Enter class Name: > ")
+
+pure_classname = base_classname
+catname = raw_input("Enter Category: > ")
+
+if catname != "":
+    base_filename  = "%s+%s" % (base_classname, catname)
+else:
+    base_filename = base_classname
+
+classname = base_classname
+
+if catname != "":
+    classname = "%s (%s)" % (base_classname, catname)
+
+m_filled = IMPL_TEMPLATE.replace('@CLASSNAME@', classname).replace(
+             '@DATE@', utcstr).replace('@YEAR@', ystr)
+
+h_filled = HEADER_TEMPLATE.replace('@CLASSNAME@', classname).replace(
+             '@DATE@', utcstr).replace('@UPCASE_CLASSNAME@', 
+             '%s__%s' % (pure_classname.upper(), catname.upper()))
+h_filled = h_filled.replace('@YEAR@', ystr)
+
+if catname == '':
+    h_filled = h_filled.replace('@NSOBJECT_MEMBER_CLASSES@', 
+            NSOBJECT_MEMBER_CLASSES)
+
+cwd = os.getcwd()
+for ext in ['h','m']:
+    fh = open('%s/%s.%s' % (cwd, base_filename, ext), 'wb')
+    
+    if ext == 'h':
+        fh.write(h_filled)
+    else:
+        fh.write(m_filled)
+
+    fh.close()
+
