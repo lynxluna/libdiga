@@ -11,12 +11,11 @@
 #import "NSString+MindTalk.h"
 #import "NSDictionary+MindTalk.h"
 #import "ChannelListViewController.h"
+#import "Globals.h"
 
 @implementation AppDelegate
 
 @synthesize window = _window;
-
-#define SECRET @"YOUR_APPLICATION_SECRET"
 
 + (void) initialize
 {
@@ -24,12 +23,12 @@
     NSURL *tokenURL = [NSURL URLWithString:@"http://auth.mindtalk.com/access_token"];
     NSURL *redirectURL = [NSURL URLWithString:@"mindtalk://"];
     
-    [[NXOAuth2AccountStore sharedStore] setClientID:@"YOUR_CLIENT_ID" 
+    [[NXOAuth2AccountStore sharedStore] setClientID: CLIENT_ID
                                              secret: SECRET 
                                    authorizationURL: authURL
                                            tokenURL: tokenURL
-                                        redirectURL:redirectURL 
-                                     forAccountType:@"Bisikan Hati"];
+                                        redirectURL: redirectURL 
+                                     forAccountType: @"Bisikan Hati"];
 }
      
 - (void)dealloc

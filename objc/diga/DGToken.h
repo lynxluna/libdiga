@@ -1,8 +1,7 @@
-//
-// DGBackendDelegate.h
+// DGToken.h
 // libDiga
 //
-// Created by Muhammad Sumyandityo Noor on Thu, Apr 05, 2012 04:56:44 PM UTC
+// Created by Muhammad Sumyandityo Noor on Fri, Apr 06, 2012 10:12:52 PM UTC
 // Copyright 2012. All Rights Reserved
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -26,33 +25,36 @@
 //
 // This software is utilising JSONKit Library 
 // Copyright (c) 2011 John Engelhart
-//
+// 
 // This software is utilising OAuth2Client Library
 // Copyright (c) 2010 nxtbgthng
-//
+
+
+#ifndef DIGA_DGTOKEN___H
+#define DIGA_DGTOKEN___H
 
 #import <Foundation/Foundation.h>
-#import "DGRequestTypes.h"
 
-@class DGToken;
+@interface DGToken : NSObject {
+    
+}
 
-@protocol DGBackendDelegate <NSObject>
+@property(nonatomic, retain, readonly) NSString *accessToken;
+@property(nonatomic, retain, readonly) NSString *refreshToken;
+@property(nonatomic, assign, readonly) unsigned int trackCode;
 
-@optional
++ (DGToken*) tokenFromUserDefaults;
++ (DGToken*) tokenFromQueryString: (NSString*) queryString;
 
-- (void) requestSucceeded:(NSString *)connectionIdentifier;
-- (void) requestFailed:(NSString *)connectionIdentifier withError:(NSError *)error;
+- (id) initWithAccessToken: (NSString*) accessToken
+              refreshToken: (NSString*) refreshToken
+                 trackCode: (unsigned int) trackCode;
 
-- (void) connectionStarted:(NSString *)connectionIdentifier;
-- (void) connectionFinished:(NSString *)connectionIdentifier;
+- (id) initWithQueryString: (NSString*) queryString;
 
-- (void) channelListReceived: (NSArray*) channels forRequestType: (DGRequestType) requestType;
-- (void) userListReceived: (NSArray*) users forRequestType: (DGRequestType) requestType;
-- (void) streamListReceived: (NSArray*) posts forRequestType: (DGRequestType) requestType;
-- (void) commentsListReceived: (NSArray*) comments forRequestType: (DGRequestType) requestType;
-- (void) resultReceived: (NSArray*) statuses forRequestType: (DGRequestType) requestType;
-- (void) notificationListReceived: (NSArray*) statuses forRequestType: (DGRequestType) requestType;
-- (void) tokenReceived: (DGToken*) token forRequestType: (DGRequestType) requestType;
-- (void) onAPIFailure: (NSDictionary*)errorDict forRequestType: (DGRequestType) requestType;
-- (void) onGenericResultReceived: (NSArray*) statuses forRequestType: (DGRequestType) requestType;
+- (void) saveToUserDefaults;
+
 @end
+
+#endif
+

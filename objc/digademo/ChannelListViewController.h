@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MTBackendDelegate.h"
+#import "DGBackendDelegate.h"
 
 @class DGBackend;
 @class DGHTTPConnection;

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6C4364E5152EC89400180A6C /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C4364E4152EC89400180A6C /* PostViewController.m */; };
+		6C53063A152FA20C00FE2EE7 /* DGParserDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C530637152FA20C00FE2EE7 /* DGParserDelegate.h */; };
+		6C53063B152FA20C00FE2EE7 /* DGToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C530638152FA20C00FE2EE7 /* DGToken.h */; };
+		6C53063C152FA20C00FE2EE7 /* DGToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C530639152FA20C00FE2EE7 /* DGToken.m */; };
 		6CA9B0EA152DDC8800818299 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA9B0E9152DDC8800818299 /* Foundation.framework */; };
 		6CA9B109152E10D700818299 /* DGRequestTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CA9B108152E10D700818299 /* DGRequestTypes.h */; };
 		6CF50393152E239A002E350A /* JSONKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6CF50391152E239A002E350A /* JSONKit.h */; };
@@ -97,6 +100,10 @@
 /* Begin PBXFileReference section */
 		6C4364E3152EC89400180A6C /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
 		6C4364E4152EC89400180A6C /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		6C530637152FA20C00FE2EE7 /* DGParserDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGParserDelegate.h; sourceTree = "<group>"; };
+		6C530638152FA20C00FE2EE7 /* DGToken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DGToken.h; sourceTree = "<group>"; };
+		6C530639152FA20C00FE2EE7 /* DGToken.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DGToken.m; sourceTree = "<group>"; };
+		6C59F708152FB162000F8483 /* Globals.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Globals.h; sourceTree = "<group>"; };
 		6CA9B0E6152DDC8800818299 /* libdiga.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libdiga.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CA9B0E9152DDC8800818299 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6CA9B0ED152DDC8800818299 /* diga-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "diga-Prefix.pch"; sourceTree = "<group>"; };
@@ -240,6 +247,9 @@
 				6CF503BA152E2E48002E350A /* Parser */,
 				6CF50395152E2469002E350A /* DGBackend.h */,
 				6CF50396152E2469002E350A /* DGBackend.m */,
+				6C530637152FA20C00FE2EE7 /* DGParserDelegate.h */,
+				6C530638152FA20C00FE2EE7 /* DGToken.h */,
+				6C530639152FA20C00FE2EE7 /* DGToken.m */,
 				6CF503F0152E38A4002E350A /* DGHTTPConnection.h */,
 				6CF503F1152E38A4002E350A /* DGHTTPConnection.m */,
 				6CF503EE152E3787002E350A /* DGBackendDelegate.h */,
@@ -345,6 +355,7 @@
 				6CF5041A152E5A6D002E350A /* ChannelListViewController.m */,
 				6C4364E3152EC89400180A6C /* PostViewController.h */,
 				6C4364E4152EC89400180A6C /* PostViewController.m */,
+				6C59F708152FB162000F8483 /* Globals.h */,
 			);
 			path = digademo;
 			sourceTree = "<group>";
@@ -385,6 +396,8 @@
 				6CF503EC152E30DE002E350A /* NSString+MindTalk.h in Headers */,
 				6CF503EF152E3787002E350A /* DGBackendDelegate.h in Headers */,
 				6CF503F2152E38A5002E350A /* DGHTTPConnection.h in Headers */,
+				6C53063A152FA20C00FE2EE7 /* DGParserDelegate.h in Headers */,
+				6C53063B152FA20C00FE2EE7 /* DGToken.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,6 +548,7 @@
 				6CF503EB152E30DE002E350A /* NSDictionary+MindTalk.m in Sources */,
 				6CF503ED152E30DE002E350A /* NSString+MindTalk.m in Sources */,
 				6CF503F3152E38A5002E350A /* DGHTTPConnection.m in Sources */,
+				6C53063C152FA20C00FE2EE7 /* DGToken.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

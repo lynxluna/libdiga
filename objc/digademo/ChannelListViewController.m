@@ -9,8 +9,8 @@
 #import "ChannelListViewController.h"
 #import "DGBackend.h"
 #import "NSDictionary+MindTalk.h"
-
-
+#import "Globals.h"
+#import "DGToken.h"
 
 @interface ChannelListViewController ()
 
@@ -39,11 +39,15 @@
     
     
     if (!_backend) {
-        _backend = [[DGBackend alloc] initWithAPIDomain:@"api.mindtalk.com" apiKey:@"YOUR_API_KEY" delegate:self];
+        _backend = [[DGBackend alloc] initWithAPIDomain:@"api.mindtalk.com" 
+                                                 apiKey:API_KEY 
+                                               delegate:self];
         
     }
     
-    _backend.accessToken = @"YOUR_ACCESS_TOKEN";
+    DGToken *tok = [DGToken tokenFromUserDefaults];
+    
+    _backend.accessToken = tok ? tok.accessToken : DEV_ACCESS_TOKEN;
     [_backend getMyInfo];
 
     

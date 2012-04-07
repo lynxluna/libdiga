@@ -35,6 +35,7 @@
 #import "DGHTTPConnection.h"
 #import "DGJKParser.h"
 #import "NSDictionary+MindTalk.h"
+#import "DGToken.h"
 
 @interface DGBackend(PrivateMethods)
 
@@ -49,6 +50,7 @@
                                    requestType: (DGRequestType) requestType
                                queryParameters: (NSDictionary*)params;
 - (void) parseDataForConnection: (DGHTTPConnection*) connection;
+- (void) parseTokenForConnection: (DGHTTPConnection*) connection;
 
 @end
 
@@ -248,7 +250,12 @@
     NSData *receivedData = [connection data];
     
     if (receivedData) {
-        [self parseDataForConnection:connection];
+        if (connection.requestType != DGRequestTokenFromCode) {
+            [self parseDataForConnection:connection];
+        }
+        else {
+            [self parseTokenForConnection:connection];
+        }
     }
     
     [_connections removeObjectForKey:connid];
@@ -274,7 +281,72 @@
                            URL:URL];
 }
 
+- (void) parseTokenForConnection:(DGHTTPConnection *)connection
+{
+    NSData *tokenData = [[[connection data] copy] autorelease];
+    NSString *tokenString = [[NSString alloc] initWithData:tokenData 
+                                                  encoding:NSUTF8StringEncoding];
+    
+    DGRequestType reqType = connection.requestType;
+    
+    DGToken *token = [DGToken tokenFromQueryString:tokenString];
+    
+    SEL delegateSelector = nil;
+    
+    if (_delegate && ![_delegate isKindOfClass:[NSNull class]] &&
+        [_delegate respondsToSelector:@selector(tokenReceived:forRequestType:)])
+    {
+        delegateSelector = @selector(tokenReceived:forRequestType:);
+    }
+    
+    if (delegateSelector == nil) {
+        return;
+    }
+    
+    NSMethodSignature *signature = [[_delegate class] instanceMethodSignatureForSelector:delegateSelector];
+    NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:signature];
+    invocation.target = _delegate;
+    invocation.selector = delegateSelector;
+    
+    [invocation setArgument:&token atIndex:2];
+    [invocation setArgument:&reqType atIndex:3];
+    [invocation invoke];
+    
+    
+    [tokenString release];
+}
+
 #pragma mark utility
+
+- (NSString*) sendTokenRequestFromCode: (NSString*) code
+{
+    NSString *urlStr = 
+    [NSString stringWithFormat:@"http://auth.mindtalk.com/access_token?code=%@&client_secret=%@",
+                                                   code, _clientSecret];
+    NSURL *url = [NSURL URLWithString:urlStr];
+    
+    DGHTTPConnection *connection = nil;
+    
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    
+    connection = [[DGHTTPConnection alloc] initWithRequest:req
+                                                  delegate:self 
+                                               requestType:DGRequestTokenFromCode
+                                              responseType:DGResponseToken];
+    if (!connection) {
+        return  nil;
+    }
+    else {
+        [_connections setObject:connection forKey:[connection identifier]];
+        [connection release];
+    }
+    
+    if ( _delegate && [_delegate respondsToSelector:@selector(connectionStarted:)] ) {
+        [_delegate performSelector:@selector(connectionStarted:) withObject:[connection identifier]];
+    }
+    
+    return [connection identifier];
+}
 
 - (NSString*) sendRequestWithMethod:(NSString *)method path:(NSString *)path queryParameters:(NSDictionary *)params requestType:(DGRequestType)requestType responseType:(DGResponseType)responseType
 {
@@ -373,6 +445,16 @@
 
 
 #pragma mark mindtalkapi
+
+- (void) getAccessTokenFromCode:(NSString *)code
+{
+    if (code && [code isKindOfClass:[NSString class]] &&
+        code.length > 0) 
+    {
+        [self sendTokenRequestFromCode:code];
+    }
+}
+
 - (void) getPopularChannels:(NSUInteger)limit
 {
     NSString *path = @"v1/channel/popular";

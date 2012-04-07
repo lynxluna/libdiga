@@ -22,10 +22,12 @@
 // WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 // FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 // OTHER DEALINGS IN THE SOFTWARE.
-//
-// OAuth2Client library
-// Portion of this software copyright (c) 2010 nxtbghng
+// This software is utilising JSONKit Library 
+// Copyright (c) 2011 John Engelhart
 // 
+// This software is utilising OAuth2Client Library
+// Copyright (c) 2010 nxtbgthng
+//
 
 #ifndef DIGA_DGPARSERDELEGATE___H
 #define DIGA_DGPARSERDELEGATE___H

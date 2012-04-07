@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGBackendDelegate.h"
 
-@interface LoginViewController : UIViewController
+@class DGBackend;
+@interface LoginViewController : UIViewController<DGBackendDelegate>
 {
     NSMutableData *_tokenData;
     NSString *_token;
+    DGBackend *_backend;
 }
 
 @property (retain, nonatomic) IBOutlet UIButton *loginButton;
@@ -21,7 +24,7 @@
 
 - (IBAction)loginClicked:(id)sender;
 - (IBAction)popularClicked:(id)sender;
-- (IBAction)atClicked:(id)sender;
 - (IBAction)gotoPost:(id)sender;
+- (IBAction)getAccessToken:(id)sender;
 
 @end

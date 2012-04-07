@@ -6,12 +6,13 @@
 //  Copyright (c) 2012 lynxluna@gmail.com. All rights reserved.
 //
 
+#import "DGBackend.h"
 #import "LoginViewController.h"
 #import "NXOAuth2.h"
 #import "NSURL+NXOAuth2.h"
 #import "NSDictionary+MindTalk.h"
-
-#define SECRET @"YOUR_APPLICATION_SECRETgi"
+#import "Globals.h"
+#import "DGToken.h"
 
 @interface LoginViewController ()
 
@@ -34,6 +35,9 @@
 
 - (void)viewDidLoad
 {
+    _backend = [[DGBackend alloc] initWithAPIDomain:@"api.mindtalk.com" 
+                                             apiKey:API_KEY delegate:self];
+    
     _tokenData = [[NSMutableData data] retain];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
@@ -72,19 +76,18 @@
     [self performSegueWithIdentifier:@"pushToStream" sender:self];
 }
 
-- (IBAction)atClicked:(id)sender {
-    
-    NSString *code = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_code"];
-    NSString *urlStr = [NSString stringWithFormat:@"http://auth.mindtalk.com/access_token?code=%@&client_secret=%@",
-                        code, SECRET];
-    if (code) {
-        NSURLRequest *req = [NSURLRequest requestWithURL:[NSURL URLWithString:urlStr]];
-        [NSURLConnection connectionWithRequest:req delegate:self];
-    }
-}
-
 - (IBAction)gotoPost:(id)sender {
     [self performSegueWithIdentifier:@"modalPost" sender:self];
+}
+
+- (IBAction)getAccessToken:(id)sender {
+    NSString *code = [[NSUserDefaults standardUserDefaults] objectForKey:@"access_code"];
+    [_backend getAccessTokenFromCode:code];
+}
+
+- (void) tokenReceived:(DGToken *)token forRequestType:(DGRequestType)requestType
+{
+    [token saveToUserDefaults];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response

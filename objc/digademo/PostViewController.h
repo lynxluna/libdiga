@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DGBackendDelegate.h"
+
 @class DGBackend;
-@interface PostViewController : UIViewController
+@interface PostViewController : UIViewController<DGBackendDelegate>
 {
     DGBackend *_backend;
+    NSString *_origin;
 }
 
 @property (retain, nonatomic) IBOutlet UITextField *textPost;

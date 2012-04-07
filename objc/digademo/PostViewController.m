@@ -8,6 +8,8 @@
 
 #import "DGBackend.h"
 #import "PostViewController.h"
+#import "Globals.h"
+#import "DGToken.h"
 
 @interface PostViewController ()
 
@@ -31,13 +33,19 @@
     [super viewDidLoad];
     
     if (!_backend) {
-        _backend = [[DGBackend alloc] initWithAPIDomain:@"api.mindtalk.com" apiKey:@"YOUR_API_KEY" delegate:self];
+        _backend = [[DGBackend alloc] initWithAPIDomain:@"api.mindtalk.com" 
+                                                 apiKey:API_KEY delegate:self];
         
     }
     
-    _backend.accessToken = @"YOUR_ACCESS_TOKEN";
+    DGToken *tok = [DGToken tokenFromUserDefaults];
     
-	// Do any additional setup after loading the view.
+    _backend.accessToken = tok ? tok.accessToken : DEV_ACCESS_TOKEN;
+    
+	[_backend getMyInfo];
+    
+    textPost.enabled = NO;
+    textPost.text    = @"Getting User Origin...";
 }
 
 - (void)viewDidUnload
@@ -46,6 +54,16 @@
     [self setTextDone:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
+}
+
+- (void) userListReceived:(NSArray *)users forRequestType:(DGRequestType)requestType
+{
+    NSDictionary *userData = [users objectAtIndex:0];
+    [_origin release];
+    _origin = [[userData objectForKey:@"id"] retain];
+    textPost.text = @"";
+    textPost.enabled = YES;
+    
 }
 
 - (void) onGenericResultReceived: (NSArray*) statuses forRequestType: (DGRequestType) requestType
@@ -59,6 +77,7 @@
 }
 
 - (void)dealloc {
+    [_origin release];
     [textPost release];
     [textDone release];
     [super dealloc];
@@ -67,7 +86,7 @@
     if (textPost.text.length > 0) {
         textDone.text = @"Posting...";
         [_backend postMindWithMessage:textPost.text 
-                            origin_id:@"YOUR_USER_ID"];
+                            origin_id:_origin];
     }
 }
 @end

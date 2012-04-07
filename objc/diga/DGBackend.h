@@ -87,6 +87,7 @@ typedef enum _MTSexKind {
 
 - (void) setDelegate: (id) delegate;
 
+- (void) getAccessTokenFromCode: (NSString*) code;
 
 - (DGRequestType) requestTypeForConnection: (NSString*) identifier;
 - (DGResponseType) responseTypeForConnection: (NSString*) identifier;
